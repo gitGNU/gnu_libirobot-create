@@ -1,0 +1,729 @@
+2008-07-16  Thomas Moulard  <thomas@moulard.net>
+
+	Add m4 macro.
+	* Makefile.am: Distribute the macro.
+	* libirobot-create.m4: New.
+	* src/doc.hh: Document it (and more generally the whole
+        compilation process).
+
+2008-07-10  Thomas Moulard  <thomas@moulard.net>
+
+	Fix rpm spec file.
+	* packages/rpm/libirobot-create.spec: Here.
+
+2008-07-10  Thomas Moulard  <thomas@moulard.net>
+
+	Fix rpm spec file.
+	* packages/rpm/libirobot-create.spec: Fix %setup and doc files.
+
+2008-07-09  Thomas Moulard  <thomas@moulard.net>
+
+	Fix compilation error if libserial is not available.
+	* src/irobot-create.cc: Force reference initialization.
+
+2008-07-09  Thomas Moulard  <thomas@moulard.net>
+
+	Allow .tar.gz tarball for debian packages.
+	* configure.ac: Here.
+
+2008-07-09  Thomas Moulard  <thomas@moulard.net>
+
+	Update to support serial communication natively.
+	* configure.ac: Search for LibSerial.
+	* src/doc.hh: Update documentation.
+	* src/irobot-create-ctl.cc: Change wallSensor into wall.
+	* src/irobot-create-fwd.hh: Forward declare LibSerial classes.
+	* src/irobot-create.cc,
+	* src/irobot-create.hh: Add serial communication support,
+                                Rename wallSensor into wall.
+	* tests/wall-sensor-test.cc: Change wallSensor into wall.
+
+2008-07-09  Thomas Moulard  <thomas@moulard.net>
+
+	Reunify input and output streams.
+	* src/irobot-create.cc,
+	* src/irobot-create.hh: Use only one stream for both input and output.
+
+2008-07-09  Thomas Moulard  <thomas@moulard.net>
+
+	Fix previous commit.
+	* src/irobot-create.cc: Remove debug messages.
+
+2008-07-09  Thomas Moulard  <thomas@moulard.net>
+
+	Fix read code for streamed data.
+	* src/irobot-create.cc: Fix checksum computation,
+                                stream data parsing,
+                                sleeping value after the baud
+                                command.
+
+2008-07-03  Thomas Moulard  <thomas@moulard.net>
+
+	Fix stream command.
+	* src/irobot-create.cc: No checksum has to be sent.
+	* tests/stream-test.stdout: Regenerate test.
+
+2008-07-03  Thomas Moulard  <thomas@moulard.net>
+
+	Make sensor read more reliable.
+	* src/irobot-create.cc,
+	* src/irobot-create.hh: Here.
+
+2008-07-02  Thomas Moulard  <thomas@moulard.net>
+
+	Use two separate streams to send commands.
+	* src/irobot-create.cc,
+	* src/irobot-create.hh: Use two different streams to sen commands.
+	* tests/oi-mode-sensor-test.stdout,
+	* tests/song-sensor-test.stdout: Fix test output.
+
+2008-07-02  Thomas Moulard  <thomas@moulard.net>
+
+	Update tests.
+	* src/irobot-create.cc,
+	* src/irobot-create.hh: Add getter for the OI mode.
+	* tests/Makefile.am: Build new tests.
+	* tests/battery-temperature-sensor-test.at: New.
+	* tests/battery-temperature-sensor-test.cc: New.
+	* tests/battery-temperature-sensor-test.stdout: New.
+	* tests/buttons-sensor-test.at: New.
+	* tests/buttons-sensor-test.cc: New.
+	* tests/buttons-sensor-test.stdout: New.
+	* tests/cargo-bay-digital-inputs-sensor-test.at: New.
+	* tests/cargo-bay-digital-inputs-sensor-test.cc: New.
+	* tests/cargo-bay-digital-inputs-sensor-test.stdout: New.
+	* tests/charging-sources-sensor-test.at: New.
+	* tests/charging-sources-sensor-test.cc: New.
+	* tests/charging-sources-sensor-test.stdout: New.
+	* tests/charging-state-sensor-test.at: New.
+	* tests/charging-state-sensor-test.cc: New.
+	* tests/charging-state-sensor-test.stdout: New.
+	* tests/common.hh: Add macro for sensors that returns signed char.
+	* tests/ir-sensor-test.at: New.
+	* tests/ir-sensor-test.cc: New.
+	* tests/ir-sensor-test.stdout: New.
+	* tests/oi-mode-sensor-test.at: New.
+	* tests/oi-mode-sensor-test.cc: New.
+	* tests/oi-mode-sensor-test.stdout: New.
+	* tests/overcurrent-sensor-test.at: New.
+	* tests/overcurrent-sensor-test.cc: New.
+	* tests/overcurrent-sensor-test.stdout: New.
+	* tests/song-sensor-test.at: New.
+	* tests/song-sensor-test.cc: New.
+	* tests/song-sensor-test.stdout: New.
+	* tests/stream-sensor-test.at: New.
+	* tests/stream-sensor-test.cc: New.
+	* tests/stream-sensor-test.stdout: New.
+	* tests/testsuite.at: Include new tests.
+	* tests/wall-sensor-test.at,
+	* tests/wall-sensor-test.cc,
+	* tests/wall-sensor-test.stdout: Add virtual wall sensor test.
+
+2008-07-01  Thomas Moulard  <thomas@moulard.net>
+
+	Enhance sensor reading safety.
+	* src/irobot-create.cc: Remove useless tests, check stream state
+        after each read.
+	* src/irobot-create.hh: Change readSensorPacket signature.
+
+2008-07-01  Thomas Moulard  <thomas@moulard.net>
+
+	Enhance stream reads safety.
+	* src/irobot-create.cc: Sync and flush explicitly, check error flags.
+	* src/irobot-create.hh: Change readSensorPackets signature.
+
+2008-06-27  Thomas Moulard  <thomas@moulard.net>
+
+	Add cliff sensor test.
+	* tests/Makefile.am: Compile and distribute new test.
+	* tests/cliff-sensor-test.at: New.
+	* tests/cliff-sensor-test.cc: New.
+	* tests/cliff-sensor-test.stdout: New.
+	* tests/testsuite.at: Include cliff-sensor-test.at.
+
+2008-06-27  Thomas Moulard  <thomas@moulard.net>
+
+	Add wall sensor test.
+	* tests/Makefile.am: Compile and distribute new test.
+	* tests/bump-wheel-sensor-test.cc: Use sensor macro to factor code.
+	* tests/common.hh: Add CHECK_SENSOR_UCHAR macro.
+	* tests/testsuite.at: Include wall-sensor-test.at.
+	* tests/wall-sensor-test.at: New.
+	* tests/wall-sensor-test.cc: New.
+	* tests/wall-sensor-test.stdout: New.
+
+2008-06-26  Thomas Moulard  <thomas@moulard.net>
+
+	Add bump/wheeldrop sensor test. Fix sensor reading.
+	* src/irobot-create.cc: Fix sensor reading.
+	* tests/Makefile.am: Add bumper-wheel-sensor-test test files.
+	* tests/bump-wheel-sensor-test.at: New.
+	* tests/bump-wheel-sensor-test.cc: New.
+	* tests/bump-wheel-sensor-test.stdout: New.
+	* tests/common.hh: Add extra parameter to run_test
+        in the GENERATE_TEST macro.
+	* tests/stream-test.cc: Implement test.
+	* tests/stream-test.stdout: Generate new reference.
+	* tests/baud-command-test.cc,
+	* tests/demo-command-test.cc,
+	* tests/digital-outputs-test.cc,
+	* tests/drive-command-test.cc,
+	* tests/drive-direct-command-test.cc,
+	* tests/full-command-test.cc,
+	* tests/ir-test.cc,
+	* tests/led-command-test.cc,
+	* tests/low-side-drivers-test.cc,
+	* tests/pause-stream-test.cc,
+	* tests/play-script-test.cc,
+	* tests/play-song-test.cc,
+	* tests/pwm-low-side-drivers-test.cc,
+	* tests/query-list-test.cc,
+	* tests/safe-command-test.cc,
+	* tests/script-test.cc,
+	* tests/sensors-test.cc,
+	* tests/show-script-test.cc,
+	* tests/simple-test.cc,
+	* tests/song-test.cc,
+	* tests/testsuite.at,
+	* tests/wait-angle-test.cc,
+	* tests/wait-distance-test.cc,
+	* tests/wait-event-test.cc,
+	* tests/wait-time-test.cc: Add extra parameter to run_test.
+
+2008-06-24  Thomas Moulard  <thomas@moulard.net>
+
+	Implement group sensor packets.
+	* src/irobot-create.cc: Here.
+
+2008-06-24  Thomas Moulard  <thomas@moulard.net>
+
+	Fix irobot-create-ctl sensor handling.
+	* src/irobot-create-ctl.cc: Display sensor status
+        on stderr after each sensor related command. Remove
+        show-sensors command.
+
+2008-06-19  Thomas Moulard  <thomas@moulard.net>
+
+	Fix class initialization and show-sensors action.
+	* src/irobot-create-ctl.cc: Fix sensors display.
+	* src/irobot-create.cc: Fix class initialization.
+
+2008-06-19  Thomas Moulard  <thomas@moulard.net>
+
+	Update show-sensors action in command line tool.
+	* src/irobot-create-ctl.cc: Display sensors now handled.
+
+2008-06-19  Thomas Moulard  <thomas@moulard.net>
+
+	Implement sensors getters.
+	* src/irobot-create.cc,
+	* src/irobot-create.hh: Here.
+
+2008-06-19  Thomas Moulard  <thomas@moulard.net>
+
+	Implement queried sensors queue.
+	* src/irobot-create.cc,
+	* src/irobot-create.hh: Here.
+
+2008-06-19  Thomas Moulard  <thomas@moulard.net>
+
+	Implement sensor packet reading.
+	* src/irobot-create.cc,
+	* src/irobot-create.hh: Here.
+
+2008-05-30  Thomas Moulard  <thomas@moulard.net>
+
+	Fix distcheck.
+	* tests/Makefile.am: Move .out into .stdout.
+	* tests/baud-command-test.at: Change .out into .stdout.
+	* tests/baud-command-test.out: Rename to...
+	* tests/baud-command-test.stdout: ...this.
+	* tests/demo-command-test.at: Change .out into .stdout.
+	* tests/demo-command-test.out: Rename to...
+	* tests/demo-command-test.stdout: ...this.
+	* tests/digital-outputs-test.at: Change .out into .stdout.
+	* tests/digital-outputs-test.out: Rename to...
+	* tests/digital-outputs-test.stdout: ...this.
+	* tests/drive-command-test.at: Change .out into .stdout.
+	* tests/drive-command-test.out: Rename to...
+	* tests/drive-command-test.stdout: ...this.
+	* tests/drive-direct-command-test.at: Change .out into .stdout.
+	* tests/drive-direct-command-test.out: Rename to...
+	* tests/drive-direct-command-test.stdout: ...this.
+	* tests/file-test.out: Rename to...
+	* tests/file-test.stdout: ...this.
+	* tests/full-command-test.at: Change .out into .stdout.
+	* tests/full-command-test.out: Rename to...
+	* tests/full-command-test.stdout: ...this.
+	* tests/ir-test.at: Change .out into .stdout.
+	* tests/ir-test.out: Rename to...
+	* tests/ir-test.stdout: ...this.
+	* tests/led-command-test.at: Change .out into .stdout.
+	* tests/led-command-test.out: Rename to...
+	* tests/led-command-test.stdout: ...this.
+	* tests/low-side-drivers-test.at: Change .out into .stdout.
+	* tests/low-side-drivers-test.out: Rename to...
+	* tests/low-side-drivers-test.stdout: ...this.
+	* tests/pause-stream-test.at: Change .out into .stdout.
+	* tests/pause-stream-test.out: Rename to...
+	* tests/pause-stream-test.stdout: ...this.
+	* tests/play-script-test.at: Change .out into .stdout.
+	* tests/play-script-test.out: Rename to...
+	* tests/play-script-test.stdout: ...this.
+	* tests/play-song-test.at: Change .out into .stdout.
+	* tests/play-song-test.out: Rename to...
+	* tests/play-song-test.stdout: ...this.
+	* tests/pwm-low-side-drivers-test.at: Change .out into .stdout.
+	* tests/pwm-low-side-drivers-test.out: Rename to...
+	* tests/pwm-low-side-drivers-test.stdout: ...this.
+	* tests/query-list-test.at: Change .out into .stdout.
+	* tests/query-list-test.out: Rename to...
+	* tests/query-list-test.stdout: ...this.
+	* tests/safe-command-test.at: Change .out into .stdout.
+	* tests/safe-command-test.out: Rename to...
+	* tests/safe-command-test.stdout: ...this.
+	* tests/script-test.at: Change .out into .stdout.
+	* tests/script-test.out: Rename to...
+	* tests/script-test.stdout: ...this.
+	* tests/sensors-test.at: Change .out into .stdout.
+	* tests/sensors-test.out: Rename to...
+	* tests/sensors-test.stdout: ...this.
+	* tests/show-script-test.at: Change .out into .stdout.
+	* tests/show-script-test.out: Rename to...
+	* tests/show-script-test.stdout: ...this.
+	* tests/simple-test.at: Change .out into .stdout.
+	* tests/simple-test.out: Rename to...
+	* tests/simple-test.stdout: ...this.
+	* tests/song-test.at: Change .out into .stdout.
+	* tests/song-test.out: Rename to...
+	* tests/song-test.stdout: ...this.
+	* tests/stream-test.at: Change .out into .stdout.
+	* tests/stream-test.out: Rename to...
+	* tests/stream-test.stdout: ...this.
+	* tests/wait-angle-test.at: Change .out into .stdout.
+	* tests/wait-angle-test.out: Rename to...
+	* tests/wait-angle-test.stdout: ...this.
+	* tests/wait-distance-test.at: Change .out into .stdout.
+	* tests/wait-distance-test.out: Rename to...
+	* tests/wait-distance-test.stdout: ...this.
+	* tests/wait-event-test.at: Change .out into .stdout.
+	* tests/wait-event-test.out: Rename to...
+	* tests/wait-event-test.stdout: ...this.
+	* tests/wait-time-test.at: Change .out into .stdout.
+	* tests/wait-time-test.out: Rename to...
+	* tests/wait-time-test.stdout: ...this.
+
+2008-05-29  Thomas Moulard  <thomas@moulard.net>
+
+	Add TODO file.
+	* TODO: New.
+
+2008-05-29  Thomas Moulard  <thomas@moulard.net>
+
+	Rough implementation of the sensor querying mechanism.
+	* src/irobot-create-ctl.cc: Add special show-sensors action
+        to display robot current state.
+	* src/irobot-create.cc,
+	* src/irobot-create.hh: Implement sensor querying mechanism.
+
+2008-05-29  Thomas Moulard  <thomas@moulard.net>
+
+	Fix stream command.
+	* src/irobot-create.cc: Here.
+
+2008-05-29  Thomas Moulard  <thomas@moulard.net>
+
+	Fix song command.
+	* src/irobot-create-ctl.cc: Here.
+
+2008-05-29  Thomas Moulard  <thomas@moulard.net>
+
+	Fix stringstream use in iRobot::Create.
+	* src/irobot-create.cc: Fix stringstream use.
+	* tests/query-list-test.out,
+	* tests/script-test.out,
+	* tests/song-test.out: New output references.
+
+2008-05-29  Thomas Moulard  <thomas@moulard.net>
+
+	Compare output and reference output when testing.
+	* tests/common.hh: Handle "--version" flag.
+	* tests/baud-command-test.at,
+	* tests/demo-command-test.at,
+	* tests/digital-outputs-test.at,
+	* tests/drive-command-test.at,
+	* tests/drive-direct-command-test.at,
+	* tests/full-command-test.at,
+	* tests/ir-test.at,
+	* tests/led-command-test.at,
+	* tests/led-command-test.out,
+	* tests/low-side-drivers-test.at,
+	* tests/pause-stream-test.at,
+	* tests/play-script-test.at,
+	* tests/play-song-test.at,
+	* tests/pwm-low-side-drivers-test.at,
+	* tests/query-list-test.at,
+	* tests/query-list-test.out,
+	* tests/safe-command-test.at,
+	* tests/script-test.at,
+	* tests/script-test.out,
+	* tests/sensors-test.at,
+	* tests/show-script-test.at,
+	* tests/simple-test.at,
+	* tests/song-test.at,
+	* tests/song-test.out,
+	* tests/stream-test.at,
+	* tests/wait-angle-test.at,
+	* tests/wait-distance-test.at,
+	* tests/wait-event-test.at,
+	* tests/wait-time-test.at: Compare reference output with
+        current output during check.
+
+2008-05-29  Thomas Moulard  <thomas@moulard.net>
+
+	Fix led management, required argument check.
+	* src/irobot-create-ctl.cc: Fix required argument check.
+	* src/irobot-create.hh: Fix led management.
+
+2008-05-29  Thomas Moulard  <thomas@moulard.net>
+
+	Add test suite reference files.
+	* tests/Makefile.am: Add a rule to generate
+        reference files. Ship them.
+	* tests/baud-command-test.out: New.
+	* tests/demo-command-test.out: New.
+	* tests/digital-outputs-test.out: New.
+	* tests/drive-command-test.out: New.
+	* tests/drive-direct-command-test.out: New.
+	* tests/file-test.out: New.
+	* tests/full-command-test.out: New.
+	* tests/ir-test.out: New.
+	* tests/led-command-test.out: New.
+	* tests/low-side-drivers-test.out: New.
+	* tests/pause-stream-test.out: New.
+	* tests/play-script-test.out: New.
+	* tests/play-song-test.out: New.
+	* tests/pwm-low-side-drivers-test.out: New.
+	* tests/query-list-test.out: New.
+	* tests/safe-command-test.out: New.
+	* tests/script-test.out: New.
+	* tests/sensors-test.out: New.
+	* tests/show-script-test.out: New.
+	* tests/simple-test.out: New.
+	* tests/song-test.out: New.
+	* tests/stream-test.out: New.
+	* tests/wait-angle-test.out: New.
+	* tests/wait-distance-test.out: New.
+	* tests/wait-event-test.out: New.
+	* tests/wait-time-test.out: New.
+
+2008-05-29  Thomas Moulard  <thomas@moulard.net>
+
+	More documentation.
+	* AUTHORS: Add Thomas Moulard.
+	* NEWS: Add template.
+	* README: Document.
+	* src/irobot-create-ctl.cc: Prevent safe command
+        to be sent twice.
+
+2008-05-29  Thomas Moulard  <thomas@moulard.net>
+
+	Send 16 bits integers properly.
+	* src/irobot-create.cc,
+	* src/irobot-create.hh: Here.
+
+2008-05-29  Thomas Moulard  <thomas@moulard.net>
+
+	Add command line control software, fix copyright.
+	* src/Makefile.am: Build irobot-create-ctl.
+	* src/doc.hh: Fix copyright header.
+	* src/irobot-create-ctl.cc: New.
+	* src/irobot-create-fwd.hh,
+	* src/irobot-create.cc,
+	* src/irobot-create.hh,
+	* tests/atlocal.in,
+	* tests/baud-command-test.at,
+	* tests/baud-command-test.cc,
+	* tests/common.hh,
+	* tests/demo-command-test.at,
+	* tests/demo-command-test.cc,
+	* tests/digital-outputs-test.at,
+	* tests/digital-outputs-test.cc,
+	* tests/drive-command-test.at,
+	* tests/drive-command-test.cc,
+	* tests/drive-direct-command-test.at,
+	* tests/drive-direct-command-test.cc,
+	* tests/file-test.cc,
+	* tests/full-command-test.at,
+	* tests/full-command-test.cc,
+	* tests/ir-test.at,
+	* tests/ir-test.cc,
+	* tests/led-command-test.at,
+	* tests/led-command-test.cc,
+	* tests/low-side-drivers-test.at,
+	* tests/low-side-drivers-test.cc,
+	* tests/package.m4.in,
+	* tests/pause-stream-test.at,
+	* tests/pause-stream-test.cc,
+	* tests/play-script-test.at,
+	* tests/play-script-test.cc,
+	* tests/play-song-test.at,
+	* tests/play-song-test.cc,
+	* tests/pwm-low-side-drivers-test.at,
+	* tests/pwm-low-side-drivers-test.cc,
+	* tests/query-list-test.at,
+	* tests/query-list-test.cc,
+	* tests/safe-command-test.at,
+	* tests/safe-command-test.cc,
+	* tests/script-test.at,
+	* tests/script-test.cc,
+	* tests/sensors-test.at,
+	* tests/sensors-test.cc,
+	* tests/show-script-test.at,
+	* tests/show-script-test.cc,
+	* tests/simple-test.at,
+	* tests/simple-test.cc,
+	* tests/song-test.at,
+	* tests/song-test.cc,
+	* tests/stream-test.at,
+	* tests/stream-test.cc,
+	* tests/testsuite.at,
+	* tests/wait-angle-test.at,
+	* tests/wait-angle-test.cc,
+	* tests/wait-distance-test.at,
+	* tests/wait-distance-test.cc,
+	* tests/wait-event-test.at,
+	* tests/wait-event-test.cc,
+	* tests/wait-time-test.at,
+	* tests/wait-time-test.cc: Fix copyright header.
+
+2008-05-28  Thomas Moulard  <thomas@moulard.net>
+
+	Add packages (debian, gentoo, rpm).
+	* Makefile.am: Add packages to SUBDIRS.
+	* configure.ac: Generate Makefiles.
+	* packages/Makefile.am: New.
+	* packages/debian/ChangeLog: New.
+	* packages/debian/Makefile.am: New.
+	* packages/debian/changelog: New.
+	* packages/debian/compat: New.
+	* packages/debian/control: New.
+	* packages/debian/copyright: New.
+	* packages/debian/docs: New.
+	* packages/debian/rules: New.
+	* packages/debian: New.
+	* packages/ebuild/ChangeLog: New.
+	* packages/ebuild/Makefile.am: New.
+	* packages/ebuild/libirobot-create-0.1.ebuild: New.
+	* packages/ebuild/libirobot-create-9999.ebuild: New.
+	* packages/ebuild/metadata.xml: New.
+	* packages/ebuild: New.
+	* packages/rpm/ChangeLog: New.
+	* packages/rpm/Makefile.am: New.
+	* packages/rpm/libirobot-create.spec: New.
+	* packages/rpm: New.
+	* packages: New.
+
+2008-05-28  Thomas Moulard  <thomas@moulard.net>
+
+	Prepare library for packaging.
+	* src/Makefile.am: Rename fwd.hh into irobot-create-fwd.hh.
+	* src/doc.hh: Highlight the fact that the library
+        is not official.
+	* src/fwd.hh: Rename as...
+	* src/irobot-create-fwd.hh: ...this.
+	* src/irobot-create.hh: Include forward declarations.
+
+2008-05-28  Thomas Moulard  <thomas@moulard.net>
+
+	Document, get rid of dependency on libutil/Boost.
+	* configure.ac: Remove Boost tests.
+	* src/Makefile.am: Remove util directory from SUBDIRS.
+	* src/doc.hh,
+	* src/fwd.hh,
+	* src/irobot-create.cc,
+	* src/irobot-create.hh: Document. Remove LedColor, LedIntensity types.
+	* tests/led-command-test.cc:
+        Fix test to remove LedColor, LedIntensity types.
+
+2008-05-28  Thomas Moulard  <thomas@moulard.net>
+
+	Implement more commands.
+	* src/irobot-create.cc,
+	* src/irobot-create.hh: Implement query-list, song and stream.
+	* tests/Makefile.am: Add new tests.
+	* tests/query-list-test.at: New.
+	* tests/query-list-test.cc: New.
+	* tests/script-test.at: New.
+	* tests/script-test.cc: New.
+	* tests/song-test.at: New.
+	* tests/song-test.cc: New.
+	* tests/stream-test.at: New.
+	* tests/stream-test.cc: New.
+	* tests/testsuite.at: Include new tests.
+
+2008-05-27  Thomas Moulard  <thomas@moulard.net>
+
+	Implement tests, enhance library.
+	* src/irobot-create.cc,
+	* src/irobot-create.hh: Check bounds.
+	* tests/demo-command-test.cc,
+	* tests/digital-outputs-test.cc,
+	* tests/ir-test.cc,
+	* tests/low-side-drivers-test.cc,
+	* tests/pause-stream-test.cc,
+	* tests/play-script-test.cc,
+	* tests/play-song-test.cc,
+	* tests/pwm-low-side-drivers-test.cc,
+	* tests/sensors-test.cc,
+	* tests/show-script-test.cc,
+	* tests/wait-angle-test.cc,
+	* tests/wait-distance-test.cc,
+	* tests/wait-event-test.cc,
+	* tests/wait-time-test.cc: Implement tests.
+
+2008-05-27  Thomas Moulard  <thomas@moulard.net>
+
+	Add (empty) tests for new commands.
+	* tests/Makefile.am: Add new tests.
+	* tests/digital-outputs-test.at: New.
+	* tests/digital-outputs-test.cc: New.
+	* tests/ir-test.at: New.
+	* tests/ir-test.cc: New.
+	* tests/low-side-drivers-test.at: New.
+	* tests/low-side-drivers-test.cc: New.
+	* tests/pause-stream-test.at: New.
+	* tests/pause-stream-test.cc: New.
+	* tests/play-script-test.at: New.
+	* tests/play-script-test.cc: New.
+	* tests/play-song-test.at: New.
+	* tests/play-song-test.cc: New.
+	* tests/pwm-low-side-drivers-test.at: New.
+	* tests/pwm-low-side-drivers-test.cc: New.
+	* tests/sensors-test.at: New.
+	* tests/sensors-test.cc: New.
+	* tests/show-script-test.at: New.
+	* tests/show-script-test.cc: New.
+	* tests/testsuite.at: Include new tests.
+	* tests/wait-angle-test.at: New.
+	* tests/wait-angle-test.cc: New.
+	* tests/wait-distance-test.at: New.
+	* tests/wait-distance-test.cc: New.
+	* tests/wait-event-test.at: New.
+	* tests/wait-event-test.cc: New.
+	* tests/wait-time-test.at: New.
+	* tests/wait-time-test.cc: New.
+
+2008-05-27  Thomas Moulard  <thomas@moulard.net>
+
+	Implement more commands.
+	* src/irobot-create.cc,
+	* src/irobot-create.hh: Here.
+
+2008-05-27  Thomas Moulard  <thomas@moulard.net>
+
+	Implement more tests.
+	* src/irobot-create.cc: Fix bound checking.
+	* src/irobot-create.hh: Add mising led values.
+	* tests/Makefile.am: Distribute new Autotest files.
+	* tests/baud-command-test.at: New.
+	* tests/demo-command-test.at: New.
+	* tests/drive-command-test.at: New.
+	* tests/drive-command-test.cc: Implement test.
+	* tests/drive-direct-command-test.at: New.
+	* tests/drive-direct-command-test.cc: Implement test.
+	* tests/full-command-test.at: New.
+	* tests/full-command-test.cc: Implement test.
+	* tests/led-command-test.at: New.
+	* tests/led-command-test.cc: Implement test.
+	* tests/safe-command-test.at: New.
+	* tests/safe-command-test.cc: Implement test.
+	* tests/simple.at: Rename into...
+	* tests/simple-test.at: ...this.
+	* tests/testsuite.at: Add new test cases.
+
+2008-05-27  Thomas Moulard  <thomas@moulard.net>
+
+	Add command test suite and enhance command management.
+	* src/Makefile.am: Add availabe warning flags to command line.
+	* src/irobot-create.cc,
+	* src/irobot-create.hh: Use Baud, Mode type to enhance safety.
+	* tests/Makefile.am: Add new tests binaries.
+	* tests/baud-command-test.cc: New.
+	* tests/common.hh: New.
+	* tests/demo-command-test.cc: New.
+	* tests/drive-command-test.cc: New.
+	* tests/drive-direct-command-test.cc: New.
+	* tests/file-test.cc: Use Demo type.
+	* tests/full-command-test.cc: New.
+	* tests/led-command-test.cc: New.
+	* tests/safe-command-test.cc: New.
+	* tests/simple-test.cc: Use new test framework.
+
+2008-05-26  Thomas Moulard  <thomas@moulard.net>
+
+	Implement more commands.
+	* src/irobot-create.cc,
+	* src/irobot-create.hh: Implement more commands.
+	* tests/file-test.cc: Make test more verbose.
+
+2008-05-26  Thomas Moulard  <thomas@moulard.net>
+
+	Add file-test.
+	* tests/Makefile.am: Compile file-test.
+	* tests/file-test.cc: New.
+
+2008-05-26  Thomas Moulard  <thomas@moulard.net>
+
+	Add missing file.
+	* tests/simple-test.cc: New.
+
+2008-05-26  Thomas Moulard  <thomas@moulard.net>
+
+	Fix test suite.
+	* configure.ac: Generate atlocal.
+	* tests/atlocal.in: New.
+	* tests/simple.at: Fix test description.
+	* tests/testsuite.at: Fix test file name.
+
+2008-05-25  Thomas Moulard  <thomas@moulard.net>
+
+	Add basic test suite.
+	* Makefile.am: Add tests to SUBDIRS.
+	* configure.ac: Generate package.m4 and Makefile in tests directory.
+	* tests/Makefile.am: New.
+	* tests/package.m4.in: New.
+	* tests/simple.at: New.
+	* tests/testsuite.at: New.
+	* tests: New.
+
+2008-05-25  Thomas Moulard  <thomas@moulard.net>
+
+	Add baud, start, safe, full and demo commands.
+	* configure.ac: Generate Makefile for libutil.
+	* src/doc.hh: Replace dummy documentation by real one.
+	* src/fwd.hh: Replace dummy content by Create forward declaration.
+	* src/irobot-create.cc,
+	* src/irobot-create.hh: Implements five basic commands.
+
+2008-05-25  Thomas Moulard  <thomas@moulard.net>
+
+	Add required files.
+	* AUTHORS: New.
+	* NEWS: New.
+	* README: New.
+
+2008-05-25  Thomas Moulard  <thomas@moulard.net>
+
+	Create project.
+	* ChangeLog: New.
+	* Makefile.am: New.
+	* bootstrap: New.
+	* configure.ac: New.
+	* src/Makefile.am: New.
+	* src/doc.hh: New.
+	* src/fwd.hh: New.
+	* src/irobot-create.cc: New.
+	* src/irobot-create.hh: New.
+	* src: New.
+

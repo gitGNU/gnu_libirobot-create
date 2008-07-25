@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<herd>no-herd</herd>
+<maintainer>
+  <email>thomas.moulard@gmail.com</email>
+  <name>Thomas Moulard</name>
+</maintainer>
+<longdescription>
+The iRobot Create library allows user to easily communicate with the iRobot
+Create robot. It implements the Open Interface protocol version 2.
+</longdescription>
+</pkgmetadata>

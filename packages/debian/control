@@ -1,0 +1,11 @@
+Source: libirobot-create
+Section: devel
+Priority: optional
+Maintainer: Thomas Moulard <thomas.moulard@gmail.com>
+Build-Depends-Indep: debhelper (>= 4.0.0), autotools-dev
+Standards-Version: 3.6.2
+
+Package: libirobot-create
+Architecture: all
+Depends: ${shlibs:Depends}
+Description: Library used to communicate with the iRobot Create.

@@ -1,0 +1,9 @@
+2008-05-29  Thomas Moulard  <thomas@moulard.net>
+
+	Add control software to package.
+	* libirobot-create.spec: Here.
+
+2008-05-28  Thomas Moulard  <thomas@moulard.net>
+
+	* Makefile.am: Create.
+	* libirobot-create.spec: Create.

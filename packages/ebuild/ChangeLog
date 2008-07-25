@@ -1,0 +1,11 @@
+2008-05-28  Thomas Moulard  <thomas@moulard.net>
+
+	Fix svn repository URL.
+	* libirobot-create-9999.ebuild: Here.
+
+2008-05-28  Thomas Moulard  <thomas@moulard.net>
+
+	* libirobot-create-0.1.ebuild,
+	* libirobot-create-9999.ebuild,
+	* metadata.xml,
+	* Makefile.am: Create.

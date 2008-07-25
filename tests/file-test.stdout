@@ -1,0 +1,2 @@
+Usage: /home/thomas/projects/usc/dive/tool/irobot-create/trunk/_build/tests/.libs/lt-file-test <device>
+The device argument may be /dev/ttyS0 or /dev/rfcomm0.

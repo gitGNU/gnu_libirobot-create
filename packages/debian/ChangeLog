@@ -1,0 +1,11 @@
+2008-05-28  Thomas Moulard  <thomas@moulard.net>
+
+	* ChangeLog: New.
+	* Makefile.am: New.
+	* changelog: New.
+	* compat: New.
+	* control: New.
+	* copyright: New.
+	* docs: New.
+	* rules: New.
+

@@ -1,0 +1,18 @@
+                                                                -*- outline -*-
+
+* Introduction
+
+This library allows safe and easy communication with the iRobot Create robot.
+
+
+* FAQ
+** How to output data in a (more) human friendly form?
+
+The ``hexdump'' Linux binary can help you.
+
+Example:
+
+$ irobot-create-ctl start | hexdump -e '1/1 "%d "'
+128 %
+$ irobot-create-ctl safe | hexdump -e '1/1 "%d "'
+128 131 %
