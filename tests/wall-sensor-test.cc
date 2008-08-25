@@ -1,3 +1,5 @@
+// Copyright (C) 2008 iLab
+//
 // This file is part of the iRobot Create library.
 //
 // libirobot-create is free software: you can redistribute it and/or modify
