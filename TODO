@@ -1,4 +1,7 @@
                                                                 -*- outline -*-
 
-* Serialization
-=> Being able to restore the robot state without re-querying everything.
+* Serialization.
+-> Being able to restore the robot state without re-querying everything.
+
+* Auto bluetooth connection.
+* Sleep / bandwith overflow detection.

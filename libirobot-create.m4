@@ -1,4 +1,5 @@
-# This file is part of the libirobot-create.                     -*-Autoconf-*-
+# Copyright (C) 2008 iLab                                        -*-Autoconf-*-
+# This file is part of the libirobot-create.
 #
 # libirobot-create is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
