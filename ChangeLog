@@ -1,3 +1,57 @@
+2008-08-28  Thomas Moulard  <thomas@moulard.net>
+
+	Fix copyright header.
+	* build-aux/auto-ice.m4: Remove.
+	* build-aux/auto-ice.mk: Remove.
+	* build-aux/autotroll.m4: Remove.
+	* build-aux/autotroll.mk: Remove.
+	* libirobot-create.m4,
+	* src/doc.hh,
+	* src/irobot-create-ctl.cc,
+	* src/irobot-create-fwd.hh,
+	* src/irobot-create.cc,
+	* src/irobot-create.hh,
+	* tests/battery-temperature-sensor-test.cc,
+	* tests/baud-command-test.cc,
+	* tests/bump-wheel-sensor-test.cc,
+	* tests/buttons-sensor-test.cc,
+	* tests/cargo-bay-digital-inputs-sensor-test.cc,
+	* tests/charging-sources-sensor-test.cc,
+	* tests/charging-state-sensor-test.cc,
+	* tests/cliff-sensor-test.cc,
+	* tests/common.hh,
+	* tests/demo-command-test.cc,
+	* tests/digital-outputs-test.cc,
+	* tests/drive-command-test.cc,
+	* tests/drive-direct-command-test.cc,
+	* tests/file-test.cc,
+	* tests/full-command-test.cc,
+	* tests/ir-sensor-test.cc,
+	* tests/ir-test.cc,
+	* tests/led-command-test.cc,
+	* tests/low-side-drivers-test.cc,
+	* tests/oi-mode-sensor-test.cc,
+	* tests/overcurrent-sensor-test.cc,
+	* tests/pause-stream-test.cc,
+	* tests/play-script-test.cc,
+	* tests/play-song-test.cc,
+	* tests/pwm-low-side-drivers-test.cc,
+	* tests/query-list-test.cc,
+	* tests/safe-command-test.cc,
+	* tests/script-test.cc,
+	* tests/sensors-test.cc,
+	* tests/show-script-test.cc,
+	* tests/simple-test.cc,
+	* tests/song-sensor-test.cc,
+	* tests/song-test.cc,
+	* tests/stream-sensor-test.cc,
+	* tests/stream-test.cc,
+	* tests/wait-angle-test.cc,
+	* tests/wait-distance-test.cc,
+	* tests/wait-event-test.cc,
+	* tests/wait-time-test.cc,
+	* tests/wall-sensor-test.cc: Fix copyright header.
+
 2008-08-25  Thomas Moulard  <thomas@moulard.net>
 
 	Fix copyright headers.

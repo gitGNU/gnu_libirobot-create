@@ -1,4 +1,5 @@
-// Copyright (C) 2008 iLab
+// Copyright (C) 2008 by Thomas Moulard, the University of Southern California
+// (USC), and iLab at USC.
 //
 // This file is part of the iRobot Create library.
 //

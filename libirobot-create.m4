@@ -1,4 +1,6 @@
-# Copyright (C) 2008 iLab                                        -*-Autoconf-*-
+#                                                                -*-Autoconf-*-
+# Copyright (C) 2008 by Thomas Moulard, the University of Southern California
+# (USC), and iLab at USC.
 # This file is part of the libirobot-create.
 #
 # libirobot-create is free software: you can redistribute it and/or modify
