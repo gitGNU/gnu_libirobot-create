@@ -1,5 +1,49 @@
 2008-08-28  Thomas Moulard  <thomas@moulard.net>
 
+	Fix copyright headers in the testsuite.
+	* build-aux/autotest-utils.at,
+	* tests/battery-temperature-sensor-test.at,
+	* tests/baud-command-test.at,
+	* tests/bump-wheel-sensor-test.at,
+	* tests/buttons-sensor-test.at,
+	* tests/cargo-bay-digital-inputs-sensor-test.at,
+	* tests/charging-sources-sensor-test.at,
+	* tests/charging-state-sensor-test.at,
+	* tests/cliff-sensor-test.at,
+	* tests/demo-command-test.at,
+	* tests/digital-outputs-test.at,
+	* tests/drive-command-test.at,
+	* tests/drive-direct-command-test.at,
+	* tests/full-command-test.at,
+	* tests/ir-sensor-test.at,
+	* tests/ir-test.at,
+	* tests/led-command-test.at,
+	* tests/low-side-drivers-test.at,
+	* tests/oi-mode-sensor-test.at,
+	* tests/overcurrent-sensor-test.at,
+	* tests/pause-stream-test.at,
+	* tests/play-script-test.at,
+	* tests/play-song-test.at,
+	* tests/pwm-low-side-drivers-test.at,
+	* tests/query-list-test.at,
+	* tests/safe-command-test.at,
+	* tests/script-test.at,
+	* tests/sensors-test.at,
+	* tests/show-script-test.at,
+	* tests/simple-test.at,
+	* tests/song-sensor-test.at,
+	* tests/song-test.at,
+	* tests/stream-sensor-test.at,
+	* tests/stream-test.at,
+	* tests/testsuite.at,
+	* tests/wait-angle-test.at,
+	* tests/wait-distance-test.at,
+	* tests/wait-event-test.at,
+	* tests/wait-time-test.at,
+	* tests/wall-sensor-test.at: Fix author in copyright headers.
+
+2008-08-28  Thomas Moulard  <thomas@moulard.net>
+
 	Fix copyright header.
 	* build-aux/auto-ice.m4: Remove.
 	* build-aux/auto-ice.mk: Remove.
