@@ -26,6 +26,8 @@
 static const int TEST_FAILED = 10;
 static const int TEST_SUCCEED = 0;
 
+int run_test (iRobot::Create&, std::stringstream&);
+
 # define GENERATE_TEST()                                \
   int                                                   \
   main (int argc, char** argv)                          \

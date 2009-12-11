@@ -1,5 +1,10 @@
 2009-12-11  Thomas Moulard  <thomas.moulard@gmail.com>
 
+	Add run_test declaration.
+	* tests/common.hh: Add run_test declaration.
+
+2009-12-11  Thomas Moulard  <thomas.moulard@gmail.com>
+
 	Pass robot as a reference in all tests.
 	* tests/battery-temperature-sensor-test.cc,
 	* tests/bump-wheel-sensor-test.cc,
