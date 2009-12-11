@@ -18,7 +18,7 @@
 
 #include "common.hh"
 
-int run_test (iRobot::Create robot, std::stringstream& stream)
+int run_test (iRobot::Create& robot, std::stringstream& stream)
 {
   using namespace iRobot;
 

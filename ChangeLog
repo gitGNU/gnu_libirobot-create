@@ -1,5 +1,23 @@
 2009-12-11  Thomas Moulard  <thomas.moulard@gmail.com>
 
+	Pass robot as a reference in all tests.
+	* tests/battery-temperature-sensor-test.cc,
+	* tests/bump-wheel-sensor-test.cc,
+	* tests/buttons-sensor-test.cc,
+	* tests/cargo-bay-digital-inputs-sensor-test.cc,
+	* tests/charging-sources-sensor-test.cc,
+	* tests/charging-state-sensor-test.cc,
+	* tests/cliff-sensor-test.cc,
+	* tests/ir-sensor-test.cc,
+	* tests/oi-mode-sensor-test.cc,
+	* tests/overcurrent-sensor-test.cc,
+	* tests/song-sensor-test.cc,
+	* tests/stream-sensor-test.cc,
+	* tests/wall-sensor-test.cc: Pass robot as a reference
+	everywhere.
+
+2009-12-11  Thomas Moulard  <thomas.moulard@gmail.com>
+
 	Add missing includes and fix warnings.
 	* src/irobot-create-ctl.cc,
 	* src/irobot-create.cc: Add missing includes (for EOF
