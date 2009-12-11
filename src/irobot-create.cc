@@ -26,6 +26,7 @@
 
 #include <bitset>
 #include <cassert>
+#include <cstdio>
 #include <sstream>
 #include <unistd.h>
 #include "irobot-create.hh"
@@ -698,10 +699,12 @@ namespace iRobot
         if (!!stream_.good () && safePeek (stream_) == STREAM_HEADER)
 	  readStream ();
 	if (!readSensorPacket ())
+	  {
 	  if (stream_.rdbuf ()->in_avail () > 0)
             stream_.ignore ();
           else
             break;
+	  }
       }
 
     while (!!stream_.good () && stream_.rdbuf ()->in_avail () > 0)

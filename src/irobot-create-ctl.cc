@@ -21,6 +21,8 @@
  *
  * \brief iRobot Create command line control software.
  */
+
+#include <cstdlib>
 #include <sstream>
 #include <string>
 #include <irobot-create.hh>

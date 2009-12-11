@@ -1,5 +1,13 @@
 2009-12-11  Thomas Moulard  <thomas.moulard@gmail.com>
 
+	Add missing includes and fix warnings.
+	* src/irobot-create-ctl.cc,
+	* src/irobot-create.cc: Add missing includes (for EOF
+	definition and exit function definition) and fix warning
+	by adding extra braces.
+
+2009-12-11  Thomas Moulard  <thomas.moulard@gmail.com>
+
 	Add gitignore file.
 	* .gitignore: New.
 
